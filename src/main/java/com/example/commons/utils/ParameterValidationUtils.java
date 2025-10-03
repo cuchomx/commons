@@ -29,6 +29,10 @@ public final class ParameterValidationUtils {
         return true;
     }
 
+    public static boolean isNotValidCorrelationId(String correlationId) {
+        return !isValidCorrelationIdValue(correlationId);
+    }
+
     public static boolean isValidParameterRequest(String correlationId, Object request) {
         if (!isValidCorrelationIdValue(correlationId)) {
             log.warn("ParameterValidationUtils::isValidParameterRequest - createProduct - received null correlationId");
